@@ -1,7 +1,7 @@
 let cityInput = document.getElementById('city_input'),
     searchBtn = document.getElementById('searchBtn'),
     locationBtn = document.getElementById('locationBtn'),
-    api_key = 'apikey_amankumar_aj';
+    api_key = 'api_key_aj';
 currentWeatherCard = document.querySelectorAll('.weather-left .card')[0],
     fiveDaysForecastCard = document.querySelector('.day-forecast'),
     aqiCard = document.querySelectorAll('.highlights .card')[0],
@@ -79,6 +79,10 @@ function getWeatherDetails(name, lat, lon, country, state) {
         .then(res => res.json())
         .then(data => {
             let date = new Date();
+            let hours = date.getHours().toString().padStart(2, '0');
+            let minutes = date.getMinutes().toString().padStart(2, '0'); 
+            let seconds = date.getSeconds().toString().padStart(2, '0'); 
+            let currentTime = `${hours}:${minutes}:${seconds}`;
             currentWeatherCard.innerHTML = `
                 <div class="current-weather">
                     <div class="details">
@@ -94,6 +98,7 @@ function getWeatherDetails(name, lat, lon, country, state) {
                 <div class="card-footer">
                     <p><i class="fa-light fa-calendar"></i> ${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}, ${date.getFullYear()}</p>
                     <p><i class="fa-light fa-location-dot"></i> ${name}, ${country}</p>
+                    <p><i class="fa-light fa-clock"></i> Checked at: ${currentTime}</p>
                 </div>
             `;
 
