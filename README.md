@@ -1,5 +1,7 @@
 Haal Mausam Ka - Weather Forecast App
+
 Table of Contents
+
 •	Introduction
 •	Features
 •	Technologies Used
