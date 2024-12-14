@@ -9,15 +9,24 @@
 
 }
 
+@import url('https://fonts.cdnfonts.com/css/cascadia-code'); 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 ::placeholder {
     color: #fff;
-    opacity: 1; 
-  }
+    opacity: 1;
+}
+
+.logo1 {
+    position: sticky;
+    height: 40px;
+
+}
 
 body {
     min-height: 100vh;
@@ -31,17 +40,17 @@ hr {
     margin-bottom: 10px;
 }
 
+
 .header {
     position: sticky;
-    top: 0;
+    top: 10px;
     /* background: linear-gradient(135deg, #71b7e6, #9b59b6);
     backdrop-filter: blur(10px);  */
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
-    padding: 15px 0;
+    margin-bottom: 20px;
+
 
     & #city_input {
         /* background-color: var(--bg-color2); */
@@ -57,7 +66,12 @@ hr {
         &:focus {
             outline: none;
         }
-        
+
+        &:hover {
+            background: linear-gradient(90deg, #348F50, #56B4D3);
+            font-size: 15px;
+        }
+
     }
 
     & #searchBtn {
@@ -72,6 +86,11 @@ hr {
         cursor: pointer;
         color: #fff;
 
+        &:hover {
+            background: linear-gradient(90deg, #503adc, #e2aa5b);
+            font-size: 15px;
+        }
+
     }
 
     & #locationBtn {
@@ -84,6 +103,11 @@ hr {
         backdrop-filter: blur(10px);
         cursor: pointer;
         color: #fff;
+
+        &:hover {
+            background: linear-gradient(90deg, #9796f0, #56B4D3);
+            font-size: 15px;
+        }
 
     }
 }
@@ -104,9 +128,10 @@ hr {
     }
 
     & h2 {
-        font-size: 32px;
+        font-size: 25px;
         font-weight: 500;
         color: #fff;
+        font-family: 'Cascadia Code', sans-serif;
     }
 }
 
@@ -126,6 +151,7 @@ hr {
 
             & h2 {
                 margin: 7px 0;
+
             }
 
             & p {
@@ -155,11 +181,15 @@ hr {
         grid-column: span 3;
 
         & h2 {
+            /*outer headings right side*/
             margin-bottom: 10px;
-            font-size: small;
+            font-size: large;
+            font-family: 'Cascadia Code', sans-serif;
+
         }
 
         & .highlights {
+
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             column-gap: 15px;
