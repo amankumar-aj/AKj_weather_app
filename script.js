@@ -1,18 +1,18 @@
-let cityInput=document.getElementById('city_input'),
-searchBtn=document.getElementById('searchBtn'), 
-locationBtn=document.getElementById('locationBtn'),
-api_key='7467c1d7b6298d3aa85f264dfb58ba58';
-currentWeatherCard= document.querySelectorAll('.weather-left .card')[0],
-fiveDaysForecastCard =document.querySelector('.day-forecast'),
-aqiCard = document.querySelectorAll('.highlights .card')[0],
-sunriseCard = document.querySelectorAll('.highlights .card')[1],
-humidityVal = document.getElementById('humidityVal'),
-pressureVal = document.getElementById('pressureVal'),
-visibilityVal = document.getElementById('visibilityVal'),
-windspeedVal = document.getElementById('windspeedVal'),
-feelsVal = document.getElementById('feelsVal'),
-hourlyForecastCard = document.querySelector('.hourly-forecast'),
-aqiList = ['Good','Fair' ,'Moderate', 'Poor' ,'Very poor'];
+let cityInput = document.getElementById('city_input'),
+    searchBtn = document.getElementById('searchBtn'),
+    locationBtn = document.getElementById('locationBtn'),
+    api_key = '7467c1d7b6298d3aa85f264dfb58ba58';
+currentWeatherCard = document.querySelectorAll('.weather-left .card')[0],
+    fiveDaysForecastCard = document.querySelector('.day-forecast'),
+    aqiCard = document.querySelectorAll('.highlights .card')[0],
+    sunriseCard = document.querySelectorAll('.highlights .card')[1],
+    humidityVal = document.getElementById('humidityVal'),
+    pressureVal = document.getElementById('pressureVal'),
+    visibilityVal = document.getElementById('visibilityVal'),
+    windspeedVal = document.getElementById('windspeedVal'),
+    feelsVal = document.getElementById('feelsVal'),
+    hourlyForecastCard = document.querySelector('.hourly-forecast'),
+    aqiList = ['Good', 'Fair', 'Moderate', 'Poor', 'Very poor'];
 
 
 
@@ -216,24 +216,24 @@ function getCityCoordinates() {
 
 
 //user location
-function getuserCoordinates(){
-    navigator.geolocation.getCurrentPosition(position =>{
-        let {latitude, longitude}= position.coords;
+function getuserCoordinates() {
+    navigator.geolocation.getCurrentPosition(position => {
+        let { latitude, longitude } = position.coords;
         // console.log(lattitude, longitude); -check
-        let REVERSE_GEOCODING_URL =`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${api_key}`;
+        let REVERSE_GEOCODING_URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${api_key}`;
 
-        fetch(REVERSE_GEOCODING_URL).then(res => res.json()).then(data =>{
+        fetch(REVERSE_GEOCODING_URL).then(res => res.json()).then(data => {
             // console.log(data); -check pass
-            let{name,country,state}=data[0];
-            getWeatherDetails(name,latitude,longitude,country,state);
-        }).catch(()=>{
+            let { name, country, state } = data[0];
+            getWeatherDetails(name, latitude, longitude, country, state);
+        }).catch(() => {
             alert('Failed to fetch user location');
         });
-    },error =>{
-        if(error.code=== error.PERMISSION_DENIED){
+    }, error => {
+        if (error.code === error.PERMISSION_DENIED) {
             alert("Location Permission denied.Please Allow location permission to access weather")
         }
     });
 }
 searchBtn.addEventListener('click', getCityCoordinates);
-locationBtn.addEventListener('click',getuserCoordinates);
+locationBtn.addEventListener('click', getuserCoordinates);
