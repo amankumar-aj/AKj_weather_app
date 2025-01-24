@@ -1,7 +1,7 @@
 let cityInput = document.getElementById('city_input'),
     searchBtn = document.getElementById('searchBtn'),
     locationBtn = document.getElementById('locationBtn'),
-    api_key = 'api_key_aj';
+    api_key = '7467c1d7b6298d3aa85f264dfb58ba58';
 currentWeatherCard = document.querySelectorAll('.weather-left .card')[0],
     fiveDaysForecastCard = document.querySelector('.day-forecast'),
     aqiCard = document.querySelectorAll('.highlights .card')[0],
