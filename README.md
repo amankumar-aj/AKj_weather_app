@@ -32,7 +32,8 @@ Technologies Used
 •	OpenWeatherMap API: To fetch real-time weather data.
 •	Font Awesome: For icons.
 
-* Project Link : https://amankumar-aj.github.io/AKj_weather_app/ 
+* Project Link : https://amankumar-aj.github.io/AKj_weather_app/
+* View Project: https://amankumar-aj.github.io/AKj_weather_app/
 
 Setup and Installation
 
