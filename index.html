@@ -18,23 +18,16 @@
         <div class="header">
             <h2><img src="./images/cloudy.png" class="logo1" alt=""> Haal Mausam Ka</h2>
             <div class="weather-input">
-                <input type="text" name="city" id="city_input" placeholder="Enter City Name">
+                <div class="search-container">
+                    <input type="text" name="city" id="city_input" placeholder="Enter City Name">
+                    <div class="suggestions-box" id="suggestionsBox"></div>
+                </div>
                 <button type="button" id="searchBtn">
                     <i class="fa-regular fa-search"></i>Search
                 </button>
-
                 <button type="button" id="locationBtn">
                     <i class="bx bx-target-lock"></i>Current Location
                 </button>
-                <!-- <input type="text" name="city" id="city_input" placeholder="Enter City Name"
-                    aria-label="Enter City Name">
-                <button type="button" id="searchBtn" aria-label="Search Button">
-                    <i class="fa-regular fa-search"></i> Search
-                </button>
-                <button type="button" id="locationBtn" aria-label="Current Location Button">
-                    <i class="bx bx-target-lock"></i> Current Location
-                </button> -->
-
             </div>
         </div>
         <!-- Weather data Card left side first row -->
